@@ -15,6 +15,7 @@ async function fetchVideos() {
     const response = await fetch(url, options);
     const videoData = await response.json();
     videoDataArray = videoData.data.data; // Store videos for later filtering
+    console.log(videoDataArray);
     displayVideos(videoDataArray); // Display all videos initially
   } catch (error) {
     console.error("Error fetching videos:", error);
@@ -32,16 +33,16 @@ function displayVideos(videos) {
     const videoElement = document.createElement("div");
     videoElement.classList.add("video-element");
     videoElement.innerHTML = `
-            <div class="video-card">
-                <div class="thumbnail-wrapper">
-                    <a href="https://www.youtube.com/watch?v=${video.items.id}" target='_blank' title='${videoTitle}'>
-                        <img src="${thumbnail.url}" alt="Video Thumbnail" width="${thumbnail.width}">
-                    </a>
-                </div>
-                <div class="content-wrapper">
-                    ${videoTitle} - Channel: ${channelName}
-                </div>
-            </div>`;
+    <div class="video-card">
+        <div class="thumbnail-wrapper">
+            <a href="https://www.youtube.com/watch?v=${video.items.id}" target="_blank" title="${videoTitle}">
+                <img src="${thumbnail.url}" alt="${videoTitle} Thumbnail" width="${thumbnail.width}">
+            </a>
+        </div>
+        <div class="content-wrapper">
+            <span>${videoTitle}</span> - <span>Channel: ${channelName}</span>
+        </div>
+    </div>`;
     videoCardContainer.appendChild(videoElement);
   });
 }
