@@ -67,6 +67,8 @@ This project is a web application that fetches and displays a list of YouTube vi
 
 Developed as part of the Assignment 2 project for Masterji. Special thanks to the public API provider for making video data accessible.
 
+Deploy Link: [Live Demo](https://benevolent-mochi-43c134.netlify.app/)
+
 ---
 
 Feel free to customize this documentation as needed.
